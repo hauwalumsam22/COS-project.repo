@@ -25,7 +25,7 @@ class Notepad:
         menu_bar.add_cascade(label="File", menu=file_menu)
 
         # edit menu
-        edit_menu = tk.Menu(menu-bar, tearoff=0)
+        edit_menu = tk.Menu(menu_bar, tearoff=0)
         edit_menu.add_command(label="Cut", command=self.cut_text)
         edit_menu.add_command(label="Copy", command=self.copy_text)
         edit_menu.add_command(label="Paste", command=self.paste_text)
@@ -75,5 +75,5 @@ def paste_text(self):
     self.text_widget.event_generate("<<Paste>>")
     
 def show_about(self):
-    about_text = "Simple Notepad\nCreated with Python and Tkinter\nFor our COS Project"
+    about_text = "Simple Notepad\nCreated using Python and Tkinter\nFor our COS Project"
     tk.messagebox.showinfo('About', about_text)
