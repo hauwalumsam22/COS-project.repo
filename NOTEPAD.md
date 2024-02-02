@@ -64,3 +64,16 @@ def save_file(self):
             with open(file_path, "w") as file:
                 file.write(content)
                 self.current_file_path = file_path
+
+def cut_text(self):
+    self.text_widget.event_generate("<<Cut>>")
+    
+def copy_text(self):
+    self.text_widget.event_generate("<<Copy>>")
+    
+def paste_text(self):
+    self.text_widget.event_generate("<<Paste>>")
+    
+def show_about(self):
+    about_text = "Simple Notepad\nCreated with Python and Tkinter\nFor our COS Project"
+    tk.messagebox.showinfo('About', about_text)
