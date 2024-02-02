@@ -24,3 +24,27 @@ class Notepad:
         file_menu.add_command(label="Exit", command=self.root.destroy)
         menu_bar.add_cascade(label="File", menu=file_menu)
 
+        # edit menu
+        edit_menu = tk.Menu(menu-bar, tearoff=0)
+        edit_menu.add_command(label="Cut", command=self.cut_text)
+        edit_menu.add_command(label="Copy", command=self.copy_text)
+        edit_menu.add_command(label="Paste", command=self.paste_text)
+        menu_bar.add_cascade(label="Edit", menu=edit_menu)
+
+        # Help Menu
+        help_menu = tk.Menu(menu_bar, tearoff=0)
+        help_menu.add_command(label="About", command=self.show_about)
+        menu_bar.add_cascade(label="Help", menu=help_menu)
+
+        self.root.config(menu=menu_bar)
+
+        def new_file(self):
+            self.text_widget.delete("1.0", tk.END)
+
+        def open_file(self):
+            file_path = filedialog.askopenfilename(defaultextension=".txt", filetypes=[("Text files", "*.txt"), ("All files", "*.*")])
+            if file_path:
+                with open(file_path, 'r') as file:
+                    content = file.read()
+                    self.text_widget.delete("1.0", tk.END)
+                    self.text_widget.insert(tk.END, content)
