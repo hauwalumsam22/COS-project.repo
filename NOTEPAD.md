@@ -77,3 +77,11 @@ def paste_text(self):
 def show_about(self):
     about_text = "Simple Notepad\nCreated using Python and Tkinter\nFor our COS Project"
     tk.messagebox.showinfo('About', about_text)
+
+def main():
+    root = tk.Tk()
+    notepad = Notepad(root)
+    root.mainloop()
+
+if __name__ =="__main__":
+    main()
