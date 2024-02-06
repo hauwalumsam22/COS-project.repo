@@ -4,6 +4,14 @@ import tkinter as tk
 from tkinter import filedialog
 class Notepad:
     def __init__(self, root):
+        self.show_about = "None"
+        self.copy_text = "None"
+        self.paste_text = 'None'
+        self.cut_text = "None"
+        self.save_file = "None"
+        self.save_as_file = "None"
+        self.open_file = "None"
+        self.new_file = "None"
         self.root = root
         self.root.title("Notepad")
         self.root.geometry("600x400")
